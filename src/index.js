@@ -2,8 +2,12 @@ import http from 'http'
 import { createServer } from 'http'
 
 import app from './server'
-let currentApp = app
 
+app.listen(3000, () => {
+	console.log('API on port 3000')
+})
+
+let currentApp = app
 
 if (module.hot) {
 	module.hot.accept(['./server'], () => {
